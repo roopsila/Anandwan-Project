@@ -1,0 +1,131 @@
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.65)),
+    url('https://raw.githubusercontent.com/devravik/topplaces-india-maharashtra/refs/heads/main/thingsToDo/ajanta-ellora-caves.jpg')
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🔥 subtle zoom animation for background */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+  animation: zoomBg 20s ease-in-out infinite alternate;
+}
+
+@keyframes zoomBg {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+.hero-overlay {
+  color: white;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+/* ✨ Heading styling */
+.hero-overlay h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.hero-overlay h1 span {
+  color: #95d5b2;
+}
+
+/* ✨ Paragraph styling */
+.hero-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #d8f3dc;
+}
+
+.hero-sub {
+  font-size: 1rem !important;
+  color: #b7e4c7 !important;
+  margin-bottom: 35px !important;
+}
+
+/* 🔘 Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: #52b788;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #2d6a4f;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #95d5b2;
+  color: #95d5b2;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #95d5b2;
+  color: #1b4332;
+  transform: translateY(-2px);
+}
+
+/* 📱 Responsive design */
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}
